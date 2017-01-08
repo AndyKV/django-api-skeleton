@@ -1,0 +1,31 @@
+.idea/
+# OS
+
+# Common IDEs
+*.swp
+.idea/
+.buildpath
+.project
+.settings
+
+*.ipynb
+*.retry
+# Virtual-machine
+.vagrant/
+logs/*
+
+# Python
+*.pyc
+*.pyo
+env/
+
+# Build
+build/
+dist/
+.cache/
+# Translations
+*.mo
+.env
+celerybeat-schedule
+celerybeat.pid
+api-dev.pem

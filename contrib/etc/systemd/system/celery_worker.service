@@ -1,0 +1,14 @@
+[Unit]
+Description=Celery Worker
+Requires=postgresql.service redis.server
+After=postgresql.service redis.server
+
+[Service]
+ExecStart= /root/.virtualenvs/api/bin/celery -A api.celery_app worker -B -l INFO
+Restart=yes
+StartLimitInterval=60
+WorkingDirectory=/home/api/
+User=garage
+
+[Install]
+WantedBy=multi-user.target

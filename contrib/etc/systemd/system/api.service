@@ -1,0 +1,13 @@
+Description=API application server
+Requires=postgresql.service
+After=postgresql.service
+
+[Service]
+ExecStart= /root/.virtualenvs/api/bin/uwsgi --emperor /etc/uwsgi/vassals 
+Restart=yes
+StartLimitInterval=60
+WorkingDirectory=/home/api/
+User=garage
+
+[Install]
+WantedBy=local.target
