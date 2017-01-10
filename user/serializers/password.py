@@ -8,10 +8,9 @@ class PasswordResetSerializer(serializers.Serializer):
 
 	def validate(self, attrs):
 		email = attrs.get('email')
-		user = UserProfile.objects.get(email=email)
+		user = UserProfile.objects.filter(email=email).first()
 
 		if user:
-			
 			user.token = user.make_confirm_token()
 			user.save()
 			user.send_reset_password_mail.delay(user.email, user.token)
