@@ -30,11 +30,8 @@ Implemented: restframework, uuid core model, basic userprofile api, celery tasks
     pip3 install -r requirements.txt
 
 #### configure settings
-    nano apisettings/django.py
     
-    DATABASES = {
-            'default': env.db(default='postgresql://admin:12345@localhost:5432/api_db')
-    }
+    add all settings options in .env file
 
     
 #### migrate
